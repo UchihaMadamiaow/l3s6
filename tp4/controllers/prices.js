@@ -6,4 +6,4 @@ var prices =
 
 module.exports =
   (req,res,next) =>
-    res.render('prices',{title:'liste de prices'});
+    res.render('prices',{title:'liste des prices'});

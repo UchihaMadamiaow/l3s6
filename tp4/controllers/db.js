@@ -1,9 +1,13 @@
 const mongoose = require('mongoose');
 
-const dbURI = 'mongodb://localhost/dbclients';
+const dbURI = 'mongodb://localhost/prices';
 const dbConnection = mongoose.createConnection(dbURI,{useNewUrlParser:true});
+//
+// const dbURI2 = 'mongodb://localhost/clients';
+// const dbClient = mongoose.createConnection(dbURI2,{useNewUrlParser:true});
 
 module.exports = dbConnection;
+// module.exports = dbClient;
 
 dbConnection.on('connected',
   () => console.log('db.js : connected to '+ dbURI)
@@ -15,6 +19,15 @@ dbConnection.on('error',
   err => console.log('connection error '+ err)
 );
 
+// dbClient.on('connected',
+//   () => console.log('db.js : connected to '+ dbURI2)
+// );
+// dbClient.on('disconnected',
+//   () => console.log('db.js : disconnected from '+ dbURI2)
+// );
+// dbClient.on('error',
+//   err => console.log('connection error '+ err)
+// );
 
 //
 // "clean"  management of connection end

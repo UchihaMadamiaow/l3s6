@@ -6,6 +6,6 @@ const priceSchema = new mongoose.Schema({
   price:Number
 })
 
-var Prices = dbConnection.model('prices',priceSchema,"prices")
+var Prices = dbConnection.model('prices',priceSchema)
 module.exports.schema = priceSchema;
 module.exports.model = Prices;

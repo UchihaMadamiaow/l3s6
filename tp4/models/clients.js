@@ -4,11 +4,11 @@ const mongoose =require('mongoose');
 
 const clientSchema = new mongoose.Schema({
   nom:String,
-  electricite:String,
-  gaz:Array,
-  eau:Array
+  electricite:[Number],
+  gaz:[Number],
+  eau:[Number]
 });
 
-var Clients = dbConnection.model('Clients',clientSchema,"clients");
+var Clients = dbConnection.model('clients',clientSchema);
 module.exports.Schema = clientSchema;
 module.exports.model = Clients;
